@@ -1,3 +1,6 @@
-import '../styles/index.scss';
+import 'popper.js';
+import 'bootstrap';
 
-console.log('webpack starterkit');
+import '../styles/style.scss';
+import './main';
+

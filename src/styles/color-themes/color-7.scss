@@ -1,0 +1,110 @@
+@import '../utils/variables';
+@import '../utils/extends';
+@import '../utils/filters';
+@import '../utils/functions';
+@import '../utils/media-queries';
+@import '../utils/mixins';
+@import '../utils/angled-edges';
+
+$theme-color : #5b65bd;
+
+a
+{
+	color: $theme-color;
+
+	&:hover,
+	&:focus
+	{
+		color: $theme-color;
+	}
+}
+
+main
+{
+	@include textSelection
+	{
+		background-color: $theme-color;
+	}
+}
+
+.top-bar__navigation
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+
+	.submenu a:after { background-color: $theme-color !important; }
+}
+
+.top-bar__auth-btns
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+}
+
+.top-bar__choose-lang
+{
+	.list-wrap li.is-active span:after { background-color: $theme-color; }
+}
+
+.section-heading:not(.section-heading--white)
+{
+	.__subtitle { color: $theme-color; }
+}
+
+.btn-play { background-color: $theme-color; }
+
+%btn-gradient
+{
+	background: -moz-linear-gradient(0deg, rgba(84,65,183,1) 0%, rgba(63,164,244,1) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(84,65,183,1)), color-stop(100%, rgba(63,164,244,1)));
+	background: -webkit-linear-gradient(0deg, rgba(84,65,183,1) 0%, rgba(63,164,244,1) 100%);
+	background: -o-linear-gradient(0deg, rgba(84,65,183,1) 0%, rgba(63,164,244,1) 100%);
+	background: -ms-linear-gradient(0deg, rgba(84,65,183,1) 0%, rgba(63,164,244,1) 100%);
+	background: linear-gradient(90deg, rgba(84,65,183,1) 0%, rgba(63,164,244,1) 100%);
+}
+
+.custom-btn
+{
+	&.custom-btn--style-1
+	{
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-2
+	{
+		background-color: #ece7f7;
+		border-color: #ece7f7;
+		color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-3
+	{
+		border-color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-5
+	{
+		// background-color: #ff5151;
+		// border-color: #ff5151;
+
+		// &:hover,
+		// &:focus
+		// {
+		// 	background-color: darken(#ff5151, 8% );
+		// 	border-color: darken(#ff5151, 8% );
+		// }
+	}
+}
+
+#btn-to-top
+{
+	background-color: darken($theme-color, 5%);
+}

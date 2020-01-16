@@ -1,0 +1,128 @@
+@import '../utils/variables';
+@import '../utils/extends';
+@import '../utils/filters';
+@import '../utils/functions';
+@import '../utils/media-queries';
+@import '../utils/mixins';
+@import '../utils/angled-edges';
+
+$theme-color : #db3a58;
+
+a
+{
+	color: $theme-color;
+
+	&:hover,
+	&:focus
+	{
+		color: $theme-color;
+	}
+}
+
+main
+{
+	@include textSelection
+	{
+		background-color: $theme-color;
+	}
+}
+
+.top-bar__navigation
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+
+	a
+	{
+		&.active { color: $theme-color; }
+	}
+
+	.submenu a:after { background-color: $theme-color !important; }
+}
+
+.top-bar__auth-btns
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+}
+
+.top-bar__choose-lang
+{
+	.list-wrap li.is-active span:after { background-color: $theme-color; }
+}
+
+.section-heading:not(.section-heading--white)
+{
+	.__subtitle { color: #fb435f; }
+}
+
+.btn-play
+{
+	background-color: #fb435f;
+}
+
+.services--s2
+{
+	.__ico
+	{
+		border: none;
+
+		background: -moz-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f63068), color-stop(100%, #fa6e3d));
+		background: -webkit-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+		background: -o-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+		background: -ms-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+		background: linear-gradient(90deg, #f63068 0%, #fa6e3d 100%);
+	}
+}
+
+.posts--s2
+{
+	.__item--preview
+	{
+		.__date-post { background-color: #2e6cff; }
+	}
+}
+
+%btn-gradient
+{
+	background: -moz-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f63068), color-stop(100%, #fa6e3d));
+	background: -webkit-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+	background: -o-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+	background: -ms-linear-gradient(0deg, #f63068 0%, #fa6e3d 100%);
+	background: linear-gradient(90deg, #f63068 0%, #fa6e3d 100%);
+}
+
+.custom-btn
+{
+	&.custom-btn--style-1
+	{
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-2
+	{
+		background-color: #fbece8;
+		border-color: #fbece8;
+		color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-3
+	{
+		border-color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+}
+
+#btn-to-top
+{
+	background-color: darken($theme-color, 5%);
+}

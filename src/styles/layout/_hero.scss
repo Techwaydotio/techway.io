@@ -1,0 +1,45 @@
+/* --------------------------------
+   hero
+-------------------------------- */
+
+.hero
+{
+	min-height: 400px;
+	padding-top: 180px;
+	padding-bottom: 30px;
+	@extend %bg-cover;
+	background-color: $primary-color;
+	color: $white;
+	@include userSelect(none);
+
+	&__title
+	{
+		line-height: 1.1;
+		color: inherit;
+		text-align: center;
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	.hero
+	{
+		min-height: 500px;
+		padding-top: 230px;
+	}
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

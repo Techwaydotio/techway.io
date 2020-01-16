@@ -1,0 +1,46 @@
+/* main colors */
+$primary-color   : #056eb9 !default;
+$secondary-color : #b9db27 !default;
+
+/* main fonts */
+$fontSize-root: 10px !default;
+$fontSize-base: 18px !default;
+
+$fontFamily-primary: 'Nunito Sans', sans-serif !default;
+$fontFamily-secondary: 'Quicksand', sans-serif !default;
+
+$fontFamily-base: $fontFamily-primary !default;
+
+/* main breakpoint */
+$xl-width: 1200px !default;
+$lg-width: 992px !default;
+$md-width: 768px !default;
+$sm-width: 560px !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px
+) !default;
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+	(
+		0:  0,
+		1:  ($spacer * .5),
+		2:   $spacer,
+		3:  ($spacer * 1.5),
+		4:  ($spacer * 2),
+		5:  ($spacer * 2.5),
+		6:  ($spacer * 3),
+		7:  ($spacer * 3.5),
+		8:  ($spacer * 4),
+		9:  ($spacer * 4.5),
+		10: ($spacer * 5),
+		11: ($spacer * 5.5),
+		12: ($spacer * 6),
+	),
+	$spacers
+);

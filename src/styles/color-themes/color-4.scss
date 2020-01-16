@@ -1,0 +1,133 @@
+@import '../utils/variables';
+@import '../utils/extends';
+@import '../utils/filters';
+@import '../utils/functions';
+@import '../utils/media-queries';
+@import '../utils/mixins';
+@import '../utils/angled-edges';
+
+$theme-color: #5b65bd;
+
+a
+{
+	color: $theme-color;
+
+	&:hover,
+	&:focus
+	{
+		color: $theme-color;
+	}
+}
+
+main
+{
+	@include textSelection
+	{
+		background-color: $theme-color;
+	}
+}
+
+.top-bar__navigation
+{
+	.top-bar--dark &,
+	.top-bar--light &
+	{
+		a:after { background-color: #fccb30; }
+	}
+
+	a
+	{
+		&.active { color: #fccb30; }
+	}
+
+	.submenu a:after { background-color: #fccb30 !important; }
+}
+
+.top-bar__auth-btns
+{
+	.top-bar--dark &,
+	.top-bar--light &
+	{
+		a:after { background-color: #fccb30; }
+	}
+}
+
+.top-bar__choose-lang
+{
+	.list-wrap li.is-active span:after { background-color: #fccb30; }
+}
+
+.section-heading:not(.section-heading--white)
+{
+	.__subtitle { color: $theme-color; }
+}
+
+.btn-play { background-color: #577af7; }
+
+.pricing-table--s3
+{
+	.__item
+	{
+		&--active
+		{
+			background: -moz-linear-gradient(90deg, #6959fb 0%, #4697f4 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4697f4), color-stop(100%, #6959fb));
+			background: -webkit-linear-gradient(90deg, #6959fb 0%, #4697f4 100%);
+			background: -o-linear-gradient(90deg, #6959fb 0%, #4697f4 100%);
+			background: -ms-linear-gradient(90deg, #6959fb 0%, #4697f4 100%);
+			background: linear-gradient(0deg, #6959fb 0%, #4697f4 100%);
+		}
+	}
+}
+
+%btn-gradient
+{
+	background: -moz-linear-gradient(0deg, #fbbe00 0%, #fdd968 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fbbe00), color-stop(100%, #fdd968));
+	background: -webkit-linear-gradient(0deg, #fbbe00 0%, #fdd968 100%);
+	background: -o-linear-gradient(0deg, #fbbe00 0%, #fdd968 100%);
+	background: -ms-linear-gradient(0deg, #fbbe00 0%, #fdd968 100%);
+	background: linear-gradient(90deg, #fbbe00 0%, #fdd968 100%);
+}
+
+.custom-btn
+{
+	&.custom-btn--style-1
+	{
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-2
+	{
+		background-color: #eaeefc;
+		border-color: #eaeefc;
+		color: $theme-color;
+
+		&:before
+		{
+			background: -moz-linear-gradient(0deg, rgba(105,89,251,1) 0%, rgba(70,152,244,1) 100%);
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(105,89,251,1)), color-stop(100%, rgba(70,152,244,1)));
+			background: -webkit-linear-gradient(0deg, rgba(105,89,251,1) 0%, rgba(70,152,244,1) 100%);
+			background: -o-linear-gradient(0deg, rgba(105,89,251,1) 0%, rgba(70,152,244,1) 100%);
+			background: -ms-linear-gradient(0deg, rgba(105,89,251,1) 0%, rgba(70,152,244,1) 100%);
+			background: linear-gradient(90deg, rgba(105,89,251,1) 0%, rgba(70,152,244,1) 100%);
+		}
+	}
+
+	&.custom-btn--style-3
+	{
+		border-color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+}
+
+.accordion-toggler
+{
+	i { color: $theme-color; }
+}
+
+#btn-to-top
+{
+	background-color: darken($theme-color, 5%);
+}

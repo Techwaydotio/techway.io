@@ -1,0 +1,72 @@
+/* --------------------------------
+   compare table
+-------------------------------- */
+
+$marginBottom: 50px;
+
+.compare-table
+{
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		background-color: $white;
+		margin-bottom: $marginBottom;
+		padding: 40px 30px;
+		overflow: hidden;
+
+		&--rounded { border-radius: 5px; }
+
+		&--shadow { box-shadow: 0px 0px 29px 0px rgba(#aeafaf, 0.11); }
+
+		@include media-breakpoint-up(sm)
+		{
+			display: flex;
+			flex-direction: column;
+
+			.__header { flex: 0 0 auto; }
+
+			.__body { flex: 1 0 auto; }
+
+			.__footer { flex: 0 0 auto; }
+		}
+	}
+
+	.__ico
+	{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		@include userSelect(none);
+
+		> img,
+		> svg
+		{
+			display: block;
+		}
+	}
+
+	.__desc-list { font-size: 1.6rem; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

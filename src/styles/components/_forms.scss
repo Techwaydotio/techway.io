@@ -1,0 +1,206 @@
+/* --------------------------------
+   form
+-------------------------------- */
+
+form
+{
+	position: relative;
+
+	.input-wrp
+	{
+		position: relative;
+		display: block;
+		width: 100%;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	.textfield
+	{
+		display: block;
+		width: 100%;
+		background-clip: padding-box;
+		border: 2px solid;
+		line-height: 1.2;
+		font-size: 1.6rem;
+		appearance: none;
+		outline: none;
+		padding: 15px 30px;
+		box-shadow: none;
+		border-radius: 30px;
+		@include transition(
+			background-color 0.3s ease-in-out,
+			border-color 0.3s ease-in-out,
+			color 0.3s ease-in-out
+		);
+
+		@include placeholder
+		{
+			color: #ccc;
+			@include transition(color 0.3s ease-in-out);
+		}
+
+		&--light
+		{
+			background-color: $white;
+			border-color: $white;
+			color: #b1b1b1;
+
+			&:focus,
+			&.focus
+			{
+				
+			}
+		}
+
+		&--grey
+		{
+			background-color: #f2f2f2;
+			border-color: #f2f2f2;
+			color: #b1b1b1;
+
+			&:focus,
+			&.focus
+			{
+				background-color: $white;
+			}
+		}
+
+		&--dark
+		{
+			background-color: rgba(#000, 0.2);
+			border-color: rgba(#000, 0.2);
+			color: rgba($white, 0.5);
+
+			&:focus,
+			&.focus
+			{
+				background-color: $white;
+				border-color: $white;
+				color: #b1b1b1;
+			}
+		}
+
+
+
+		&:hover,
+		&:focus,
+		&.hover,
+		&.focus
+		{
+			// border-color: #9da5ad;
+		}
+
+		&.error { border-color: $primary-color !important; }
+	}
+
+	input.textfield { height: 54px; }
+
+	textarea
+	{
+		resize: vertical;
+		min-height: 150px;
+		height: 100%;
+	}
+
+	button[type=submit]
+	{
+		cursor: pointer;
+		box-shadow: none;
+		outline: none;
+		margin-top: 10px;
+	}
+}
+
+.form--horizontal
+{
+	button[type=submit] { margin-top: 0; }
+
+	@include media-breakpoint-up(sm)
+	{
+		.input-wrp
+		{
+			width: auto;
+			margin: 0;
+			margin-right: -50px;
+		}
+	}
+}
+
+label { cursor: pointer; }
+
+.checkbox
+{
+	position: relative;
+	display: inline-block;
+	margin-top: 20px;
+	line-height: 1.5;
+	padding-left: 35px;
+
+	input[type="checkbox"]
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		visibility: hidden;
+		opacity: 0;
+		clip: rect(2px,2px,2px,2px);
+
+		&:checked ~
+		{
+			i:before { transform: scale(1); }
+
+			span a { color: $primary-color; }
+		}
+	}
+
+	i
+	{
+		position: relative;
+		float: left;
+		width: 16px;
+		height: 16px;
+		margin-left: -35px;
+		background-color: $white;
+		border: 1px solid #ccc;
+		font-size: rem-calc(16px);
+		font-weight: 700;
+		text-align: center;
+		overflow: hidden;
+		@include transition(background-color 0.25s ease-in-out);
+
+		&:before
+		{
+			content: '\2713';
+			display: block;
+			line-height: 17px;
+			transform: scale(0);
+			color: $primary-color;
+			@include transition(transform .25s cubic-bezier(.23,1,.32,1));
+		}
+
+		&:last-child { margin-right: 0; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,83 @@
+@import '../utils/variables';
+@import '../utils/extends';
+@import '../utils/filters';
+@import '../utils/functions';
+@import '../utils/media-queries';
+@import '../utils/mixins';
+@import '../utils/angled-edges';
+
+$theme-color : #5ec05a;
+
+a
+{
+	color: $theme-color;
+
+	&:hover,
+	&:focus
+	{
+		color: $theme-color;
+	}
+}
+
+main
+{
+	@include textSelection
+	{
+		background-color: $theme-color;
+	}
+}
+
+.top-bar__navigation
+{
+	.top-bar--dark &,
+	.top-bar--light &
+	{
+		a:after { background-color: $theme-color; }
+	}
+
+	a
+	{
+		&.active { color: $theme-color; }
+	}
+
+	.submenu a:after { background-color: $theme-color !important; }
+}
+
+%btn-gradient
+{
+	background: -moz-linear-gradient(0deg, #2fb76b 0%, #8ac84b 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #2fb76b), color-stop(100%, #8ac84b));
+	background: -webkit-linear-gradient(0deg, #2fb76b 0%, #8ac84b 100%);
+	background: -o-linear-gradient(0deg, #2fb76b 0%, #8ac84b 100%);
+	background: -ms-linear-gradient(0deg, #2fb76b 0%, #8ac84b 100%);
+	background: linear-gradient(90deg, #2fb76b 0%, #8ac84b 100%);
+}
+
+.custom-btn
+{
+	&.custom-btn--style-1
+	{
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-2
+	{
+		background-color: #eaf7e7;
+		border-color: #eaf7e7;
+		color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-3
+	{
+		border-color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+}
+
+#btn-to-top
+{
+	background-color: darken($theme-color, 5%);
+}

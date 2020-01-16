@@ -1,0 +1,59 @@
+/* --------------------------------
+   faq
+-------------------------------- */
+
+$marginBottom: 35px;
+
+.faq
+{
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item
+	{
+		position: relative;
+		margin-bottom: $marginBottom;
+	}
+
+	.__title { margin: 0; }
+
+	p
+	{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&--numbered
+	{
+		counter-reset: faq-num;
+
+		.__title
+		{
+			&:before
+			{
+				display: inline;
+				counter-increment: faq-num;
+				content: counter(faq-num, decimal-leading-zero) ". ";
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

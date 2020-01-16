@@ -1,0 +1,52 @@
+/* --------------------------------
+   info block
+-------------------------------- */
+
+.info-block { position: relative; }
+
+.info-block--s1
+{
+	@include media-breakpoint-up(md)
+	{
+		.image-container
+		{
+			position: absolute;
+			top: 50%;
+			right: 10%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.info-block--s2
+{
+	.image-container
+	{
+		position: absolute;
+		top: 40%;
+
+		&:nth-of-type(1) { left: -15px; }
+
+		&:nth-of-type(2) { right: -15px; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

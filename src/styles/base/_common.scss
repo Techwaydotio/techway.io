@@ -1,0 +1,191 @@
+#app
+{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	>main    { flex: 1 0 auto; }
+	>footer  { flex: 0 0 auto; }
+}
+
+iframe
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+table
+{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img
+{
+	vertical-align: middle;
+	-webkit-user-drag: none;
+	user-drag: none;
+	@include userSelect(none);
+}
+
+.image-container
+{
+	position: relative;
+	display: inline-block;
+}
+
+.lazy[src]
+{
+	opacity: 0;
+	will-change: opacity;
+	@include transition(opacity 200ms);
+
+	&.loaded { opacity: 1; }
+}
+
+/* embed responsive */
+.embed-responsive
+{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	&-item,
+	iframe,
+	embed,
+	object,
+	video
+	{
+		@extend %block-absolute--full;
+		border: 0;
+	}
+
+	&-21by9 { padding-top: percentage(9 / 21); }
+	&-16by9 { padding-top: percentage(9 / 16); }
+	&-4by3  { padding-top: percentage(3 / 4); }
+	&-1by1  { padding-top: percentage(1 / 1); }
+}
+
+.section
+{
+	position: relative;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	z-index: 0;
+
+	&--no-pt { padding-top: 0 !important; }
+	&--no-pb { padding-bottom: 0 !important; }
+
+	&--light-blue-bg { background-color: #f9fbfc; }
+
+	&--bg-img { @extend %bg-cover; }
+
+	.spacer
+	{
+		flex: 0 0 100%;
+		width: 100%;
+		min-height: 1px;
+	}
+
+	.shape
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		margin-bottom: -1px;
+		overflow: hidden;
+		z-index: -5;
+
+		svg
+		{
+			vertical-align: middle;
+			position: relative;
+			bottom: 0;
+			left: 50%;
+			width: 100%;
+			min-width: 1000px;
+			height: auto;
+			transform: translateX(-50%);
+		}
+	}
+
+	@include media-breakpoint-up(sm)
+	{
+		
+	}
+
+	@include media-breakpoint-up(md)
+	{
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	@include media-breakpoint-up(lg)
+	{
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+
+	@include media-breakpoint-up(xl)
+	{
+		
+	}
+}
+
+/* parallax */
+.jarallax
+{
+	position: relative;
+	z-index: 0;
+
+	> .jarallax-img
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@include object-fit(cover);
+		z-index: -1;
+	}
+
+	.desktop & { background-attachment: fixed; }
+}
+
+.v-align
+{
+	@extend %height-full;
+
+	&:before
+	{
+		content: "";
+		@extend %width-0;
+		@extend %height-full;
+		margin-left: -4.5px;
+	}
+
+	&:before,
+	>*
+	{
+		@extend %display-inline-block;
+		@extend %v-middle;
+	}
+
+	>* { @extend %width-full; }
+}
+
+/* circled element */
+
+.circled { @include border-radius(50%); }

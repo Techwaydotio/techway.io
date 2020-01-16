@@ -1,0 +1,132 @@
+@import '../utils/variables';
+@import '../utils/extends';
+@import '../utils/filters';
+@import '../utils/functions';
+@import '../utils/media-queries';
+@import '../utils/mixins';
+@import '../utils/angled-edges';
+
+$theme-color : #ff6833;
+
+a
+{
+	color: $theme-color;
+
+	&:hover,
+	&:focus
+	{
+		color: $theme-color;
+	}
+}
+
+main
+{
+	@include textSelection
+	{
+		background-color: $theme-color;
+	}
+}
+
+.top-bar__navigation
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+
+	a
+	{
+		&.active { color: $theme-color; }
+	}
+
+	.submenu a:after { background-color: #ff7441 !important; }
+}
+
+.top-bar__auth-btns
+{
+	.top-bar--dark &
+	{
+		a:after { background-color: $theme-color; }
+	}
+}
+
+.top-bar__choose-lang
+{
+	.list-wrap li.is-active span:after { background-color: $theme-color; }
+}
+
+.section-heading:not(.section-heading--white)
+{
+	.__subtitle { color: $theme-color; }
+}
+
+.btn-play { background-color: $theme-color; }
+
+.posts--s2
+{
+	.__item--preview
+	{
+		.__date-post { background-color: #2e6cff; }
+	}
+}
+
+%btn-gradient
+{
+	background: -moz-linear-gradient(0deg, #ff6732 0%, #ffa17b 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff6732), color-stop(100%, #ffa17b));
+	background: -webkit-linear-gradient(0deg, #ff6732 0%, #ffa17b 100%);
+	background: -o-linear-gradient(0deg, #ff6732 0%, #ffa17b 100%);
+	background: -ms-linear-gradient(0deg, #ff6732 0%, #ffa17b 100%);
+	background: linear-gradient(90deg, #ff6732 0%, #ffa17b 100%);
+}
+
+.custom-btn
+{
+	&.custom-btn--style-1
+	{
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-2
+	{
+		background-color: #fbf5e8;
+		border-color: #fbf5e8;
+		color: #ec5a1d;
+
+		&:before { @extend %btn-gradient; }
+	}
+
+	&.custom-btn--style-3
+	{
+		border-color: $theme-color;
+
+		&:before { @extend %btn-gradient; }
+	}
+}
+
+.pricing-table--s1
+{
+	.__item--active
+	{
+		background: -moz-linear-gradient(90deg, #ff8556 0%, #f06e18 50%, #fdab44 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdab44), color-stop(50%, #f06e18), color-stop(100%, #ff8556));
+		background: -webkit-linear-gradient(90deg, #ff8556 0%, #f06e18 50%, #fdab44 100%);
+		background: -o-linear-gradient(90deg, #ff8556 0%, #f06e18 50%, #fdab44 100%);
+		background: -ms-linear-gradient(90deg, #ff8556 0%, #f06e18 50%, #fdab44 100%);
+		background: linear-gradient(0deg, #ff8556 0%, #f06e18 50%, #fdab44 100%);
+
+		.__label { color: #ff7441; }
+
+		.disabled { color: #ffcab5; }
+	}
+}
+
+.footer--s5
+{
+	.footer__line--first { background-color: #f9fbfc; }
+}
+
+#btn-to-top
+{
+	background-color: darken($theme-color, 5%);
+}

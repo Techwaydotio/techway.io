@@ -1,0 +1,77 @@
+/*
+	Template Name: TechLand
+	Version: 1.0
+	Author: Pavel Blednov
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1 bootstrap
+-------------------------------------------------------------------*/
+
+@import 'utils/variables';
+@import 'utils/extends';
+@import 'utils/filters';
+@import 'utils/functions';
+@import 'utils/media-queries';
+@import 'utils/mixins';
+@import 'utils/angled-edges';
+
+// Required
+@import "vendors/bootstrap-4/functions";
+@import "vendors/bootstrap-4/variables";
+@import "vendors/bootstrap-4/mixins";
+// Optional
+@import "vendors/bootstrap-4/pagination";
+@import "vendors/bootstrap-4/utilities/align";
+@import "vendors/bootstrap-4/utilities/embed";
+@import "vendors/bootstrap-4/utilities/position";
+@import "vendors/bootstrap-4/utilities/sizing";
+@import "vendors/bootstrap-4/utilities/spacing";
+@import "vendors/bootstrap-4/utilities/text";
+
+@import 'vendors/aos/aos';
+@import 'vendors/slick';
+
+@import 'vendors-extensions/bootstrap-4/col-push-pull';
+@import 'vendors-extensions/slick';
+
+@import 'base/common';
+@import 'color-themes/color-2';
+
+@import 'components/accordions';
+@import 'components/check_list';
+@import 'components/comments_list';
+@import 'components/counters';
+@import 'components/icon_box';
+@import 'components/pagination';
+@import 'components/share_btns';
+@import 'components/social_btns';
+@import 'components/store_btns';
+@import 'components/tab';
+@import 'components/tags_list';
+@import 'components/to_top_btn';
+@import 'components/widget';
+
+@import 'layout/authorization';
+@import 'layout/brands_list';
+@import 'layout/company_contacts';
+@import 'layout/compare_table';
+@import 'layout/content';
+@import 'layout/faq';
+@import 'layout/feature';
+@import 'layout/footer';
+@import 'layout/info_block';
+@import 'layout/posts';
+@import 'layout/pricing_table';
+@import 'layout/projects';
+@import 'layout/review';
+@import 'layout/screens_app';
+@import 'layout/services';
+@import 'layout/side_menu';
+@import 'layout/sidebar';
+@import 'layout/steps';
+@import 'layout/subscribe_block';
+@import 'layout/team';
+@import 'layout/video';
