@@ -10,6 +10,22 @@
   ],
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    ["template-html-minifier", {
+      "modules": {
+        "lit-html": ["html"],
+        "lit-element": [
+          "html",
+          {"name": "css", "encapsulation": "style"}
+        ]
+      },
+      "strictCSS": true,
+      "htmlMinifier": {
+        "collapseWhitespace": true,
+        "conservativeCollapse": true,
+        "removeComments": true,
+        "caseSensitive": true
+      }
+    }]
   ]
 }
