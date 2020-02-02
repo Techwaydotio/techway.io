@@ -16,11 +16,14 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'bundle.css'
-    })
+      filename: 'bundle.css',
+      chunkFilename: 'style.css',
+    }),
   ],
+  optimization: {
+    concatenateModules: true
+  },
   module: {
     rules: [
       {
@@ -30,11 +33,16 @@ module.exports = merge(common, {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+          },
+        }, 'sass-loader']
       }
     ]
   }
