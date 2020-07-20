@@ -1,0 +1,170 @@
+/* --------------------------------
+   social buttons
+-------------------------------- */
+
+.s-btns
+{
+	ul
+	{
+		margin-top: -10px;
+		margin-left: -10px;
+
+		line-height: 0;
+		font-size: 0;
+		letter-spacing: -1px;
+	}
+
+	li
+	{
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+	a
+	{
+		display: block;
+		letter-spacing: 0;
+		text-align: center;
+		@include transition(
+			background-color 0.3s ease-in-out,
+			color 0.3s ease-in-out
+		);
+
+		i
+		{
+			vertical-align: middle;
+			width: 1em;
+			line-height: 1;
+		}
+	}
+
+	&--sm
+	{
+		a
+		{
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 1.7rem;
+		}
+	}
+
+	&--md
+	{
+		a
+		{
+			width: 45px;
+			height: 45px;
+			line-height: 45px;
+			font-size: 2rem;
+		}
+	}
+
+	&--light
+	{
+		a
+		{
+			background-color: $white;
+			color: #313e4c;
+
+			&:hover { background-color: rgba($white, 0.5); }
+		}
+	}
+
+	&--dark
+	{
+		a
+		{
+			background-color: #2d3a49;
+			color: $white;
+
+			&:hover { background-color: rgba(#2d3a49, 0.5); }
+		}
+	}
+
+	&--colored
+	{
+		$color1: #3c5a9a;
+		$color2: #f34a38;
+		$color3: #1da1f2;
+		$color4: #f11819;
+
+		a { color: $white; }
+
+		.f
+		{
+			background-color: $color1;
+
+			&:hover,
+			&:focus
+			{
+				background-color: darken($color1, 8% );
+			}
+		}
+
+		.g
+		{
+			background-color: $color2;
+
+			&:hover,
+			&:focus
+			{
+				background-color: darken($color2, 8% );
+			}
+		}
+
+		.t
+		{
+			background-color: $color3;
+
+			&:hover,
+			&:focus
+			{
+				background-color: darken($color3, 8% );
+			}
+		}
+
+		.y
+		{
+			background-color: $color4;
+
+			&:hover,
+			&:focus
+			{
+				background-color: darken($color4, 8% );
+			}
+		}
+
+		.i
+		{
+			background-image: -moz-linear-gradient( 90deg, rgb(219,140,64) 0%, rgb(195,40,105) 48%, rgb(115,36,193) 100%);
+			background-image: -ms-linear-gradient( 90deg, rgb(219,140,64) 0%, rgb(195,40,105) 48%, rgb(115,36,193) 100%);
+			background-image: -webkit-linear-gradient( 90deg, rgb(219,140,64) 0%, rgb(195,40,105) 48%, rgb(115,36,193) 100%);
+		}
+	}
+
+	&--rounded
+	{
+		a { border-radius: 50%; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,9 +1,124 @@
-{{ define "main" }}
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
 
-<h1>Hugo with Webpack, Sass, and PostCSS</h1>
+<div id="app">
+    <!-- start header -->
+    <header id="top-bar" class="top-bar top-bar--dark" data-nav-anchor="true">
+        <div class="top-bar__inner">
+            <div class="container-fluid">
+                <div class="row align-items-center no-gutters">
 
-<h3>Hooray 🎉 - you've built this with <a href="https://github.com/netlify/victor-hugo">Victor-Hugo</a>!</h3>
+                    <a class="top-bar__logo site-logo" href="index.html">
+                        <img class="img-fluid" src="{{ "img/site_logo/logo.png" | absURL }}" width="130" alt="Logo"/>
 
-<a href="{{ "/tech" | relURL }}">Check out the tech</a>
+                        <a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler"
+                           href="javascript:void(0);">
+                            <span></span>
+                        </a>
 
+                        <div class="top-bar__collapse">
+                            <nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a class="nav-link active" href="#start-screen">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="nav-link" href="#services">Services</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="nav-link" href="#team">Team</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="nav-link" href="#blog">Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <div id="top-bar__action" class="top-bar__action">
+                                <div class="d-xl-flex flex-xl-row flex-xl-wrap align-items-xl-center">
+
+                                    <div class="top-bar__auth-btns">
+                                        <a class="custom-btn custom-btn--medium custom-btn--style-3"
+                                           href="#get_in_touch">Contact
+                                            Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="start-screen" class="start-screen start-screen--full-height start-screen--style-1">
+        <div class="start-screen__bg-container">
+            <div class="start-screen__bg"
+                 style="background-image: url({{ "img/start-screen_img/start-screen_1/bg_1.png" | absURL }} );background-position: center bottom;">
+        </div>
+    </div>
+
+    <div class="start-screen__shapes  d-none d-lg-block">
+        <img class="img-shape d-none d-xl-block" src="{{ "img/start-screen_img/start-screen_1/shape_1.png" | absURL }}"
+        alt="demo"/>
+
+        <img class="img-shape" src="{{ "img/start-screen_img/start-screen_1/app_development.png" | absURL }}"
+        alt="demo"/>
+    </div>
+
+    <div class="start-screen__content-container">
+        <div class="start-screen__content__item align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <div class="d-none d-md-block">
+                            <div class="__site-name">Techway</div>
+                        </div>
+
+                        <h1><span>Javascript & React Consultancy Done Right</span></h1>
+
+                        <p>
+                            Our ways of work is personalized, methodic and transparent.
+                            We are experts of React, Angular and Javascript and
+                            are ready to help you and your team leverage the best of those technologies.
+                            We bring real value to your business by offering the best in class services
+                            and solutions for your needs.
+                        </p>
+                        <br/>
+                        <b>We can help you create amazing products.</b>
+
+                        <div class="spacer py-2 py-sm-4"></div>
+
+                        <div class="d-sm-table">
+                            <div class="d-sm-table-cell  pb-5 pb-sm-0 pr-sm-8 pr-md-10">
+                                <a class="custom-btn custom-btn--big custom-btn--style-1" href="#get_in_touch">Let's
+                                    Work Together</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end start screen -->
+
+<!-- start main -->
+<main role="main">
+    {{ block "about" . }}{{ partial "about" . }}{{end}}
+    {{ block "services" . }}{{ partial "services" . }}{{end}}
+    {{ block "info" . }}{{ partial "info" . }}{{end}}
+    {{ block "team" . }}{{ partial "team" . }}{{end}}
+    {{ block "blog-listing" . }}{{ partial "blog-listing" . }}{{end}}
+    {{ block "get-in-touch" . }}{{ partial "get-in-touch" . }}{{end}}
+</main>
+<!-- end main -->
+
+</div>
+<div id="btn-to-top-wrap">
+    <a id="btn-to-top" class="circled" href="javascript:void(0);" data-visible-offset="800"></a>
+</div>
 {{ end }}

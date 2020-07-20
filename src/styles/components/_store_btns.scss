@@ -1,0 +1,116 @@
+/* --------------------------------
+   store buttons
+-------------------------------- */
+
+.store-btns
+{
+	ul
+	{
+		margin-top: -15px;
+		margin-left: -15px;
+
+		line-height: 0;
+		font-size: 0;
+		letter-spacing: -1px;
+	}
+
+	li
+	{
+		margin-top: 15px;
+		margin-left: 15px;
+	}
+
+	a
+	{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 14px 20px;
+		line-height: 1.1;
+		font-size: 1.6rem;
+		letter-spacing: 0;
+		text-decoration: none;
+		text-shadow: none;
+		@include border-radius(30px);
+
+		box-shadow: none;
+		outline: none;
+		cursor: pointer;
+		user-select: none;
+		-webkit-user-drag: none;
+		user-drag: none;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+
+		@include transition(
+			background-color 0.3s ease-in-out,
+			color            0.3s ease-in-out
+		);
+
+		> *
+		{
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		svg { @include transition( fill 0.3s ease-in-out ); }
+
+		span
+		{
+			padding-left: 5px;
+
+			&:first-child { padding-left: 0; }
+		}
+	}
+
+	&--light
+	{
+		a
+		{
+			background-color: $white;
+			color: #145595;
+
+			svg { fill: #28baff; }
+
+			&:hover
+			{
+				background-color: #333;
+				color: $white;
+
+				svg { fill: currentColor; }
+			}
+		}
+	}
+
+	&--dark
+	{
+		a
+		{
+			background-color: #333;
+			color: $white;
+
+			svg { fill: currentColor; }
+
+			&:hover { background-color: #484848; }
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

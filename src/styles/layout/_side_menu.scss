@@ -1,0 +1,158 @@
+/* --------------------------------
+   side menu
+-------------------------------- */
+
+.side-menu
+{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 345px;
+	background-color: #2d3a49;
+	padding: 115px 30px 50px;
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: $white;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transform: translateX(100%);
+	z-index: 6;
+	@include transition(transform 400ms ease-in-out);
+
+	&:before,
+	&:after
+	{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		z-index: -1;
+	}
+
+	&:before
+	{
+		background-image: url(/img/side-menu_bg-1.png);
+		background-position: 50% 50%;
+	}
+
+	&.is-active
+	{
+		transform: translateX(0%);
+	}
+
+	&__button-close
+	{
+		position: absolute;
+		top: 50px;
+		right: 30px;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		@include transition(transform 200ms ease-in-out);
+
+		&:before,
+		&:after
+		{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			margin-top: -1px;
+			background-color: currentColor;
+			transform-origin: 50% 50%;
+		}
+
+		&:before { transform: rotate(225deg); }
+		&:after { transform: rotate(-225deg); }
+
+		&:hover { transform: rotate(90deg); }
+	}
+
+	&__inner
+	{
+		position: relative;
+		width: 100%;
+		max-width: 220px;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: scrollbar;
+	}
+
+	&__menu
+	{
+		margin-top: 9.5vh;
+		margin-bottom: 9.5vh;
+		line-height: 1.2;
+
+		li
+		{
+			margin-top: 10px;
+
+			&:first-child { margin-top: 0; }
+
+			&.active > a,
+			> a:hover,
+			> a:focus
+			{
+				color: #7c838b;
+				text-decoration: underline;
+			}
+		}
+
+		a
+		{
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	&__address
+	{
+		margin-top: 9.5vh;
+		margin-bottom: 9.5vh;
+		line-height: 1.875;
+		font-style: normal;
+
+		a
+		{
+			color: inherit;
+		}
+
+		.social-btns a
+		{
+			font-size: 20px;
+		}
+	}
+
+	.s-btns { margin-top: 30px; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

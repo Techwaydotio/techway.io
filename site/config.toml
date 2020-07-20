@@ -1,9 +1,23 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "My new Victor-Hugo site"
+defaultContentLanguage = "en"
+defaultContenLanguageInSubdir = "true"
+
+canonifyurls = true
+title = "Techway.io | JS, React, Typescript Consultancy & Training Done Right"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[Params]
+  author = "theodesp"
+  github = "theodesp"
+  email = "contact@techway.io"
+  sharing = true
+  dateFormatToUse = "2006-01-02"
+  orgName = "techway.io"
+  mainSections = ["article", "tutorial"]
+  copyright = "Code snippets licensed under MIT, unless otherwise noted © 2019"

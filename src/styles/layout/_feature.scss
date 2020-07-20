@@ -1,0 +1,103 @@
+/* --------------------------------
+   feature
+-------------------------------- */
+
+$marginBottom: 30px;
+
+.feature
+{
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		margin-bottom: $marginBottom;
+
+		.__ico
+		{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1;
+
+			>svg { vertical-align: middle; }
+		}
+
+		.__title
+		{
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-weight: 700;
+			text-transform: none;
+		}
+
+		p
+		{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.feature--s1
+{
+	.__item { }
+
+	.__ico { min-width: 50px; }
+}
+
+.feature--s2
+{
+	$marginTop: 60px;
+
+	margin-top: $marginTop;
+
+	.col,
+	[class*=col-]
+	{
+		&:first-child
+		{
+			.__item
+			{
+				&:first-child { margin-top: -$marginTop; }
+			}
+		}
+	}
+
+	.__item
+	{
+		padding: 25px 15px 30px;
+		background-color: $white;
+
+		&--rounded { border-radius: 3px; }
+
+		&--shadow { box-shadow: 0px 0px 68px 0px rgba(#aeafaf, 0.17); }
+
+		@include media-breakpoint-up(sm)
+		{
+			padding-left: 25px;
+			padding-right: 25px;
+			padding-bottom: 50px;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,86 @@
+/*
+	Template Name: TechLand
+	Version: 1.0
+	Author: Pavel Blednov
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+-------------------------------------------------------------------*/
+
+@import 'utils/variables';
+@import 'utils/extends';
+@import 'utils/filters';
+@import 'utils/functions';
+@import 'utils/media-queries';
+@import 'utils/mixins';
+@import 'utils/angled-edges';
+
+*
+{
+	padding: 0;
+	margin: 0;
+
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+html
+{
+	font-size: $fontSize-root;
+	text-size-adjust: 100%;
+
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-overflow-scrolling: touch;
+	box-sizing: border-box;
+}
+
+body
+{
+	line-height: 1.6;
+	font:
+	{
+		size: rem-calc($fontSize-base);
+		family: -apple-system, BlinkMacSystemFont, $fontFamily-base;
+		weight: 400;
+	};
+	color: #888;
+	background-color: #fff;
+}
+
+ul, ol
+{
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+}
+
+// Required
+@import "vendors/bootstrap-4/functions";
+@import "vendors/bootstrap-4/variables";
+@import "vendors/bootstrap-4/mixins";
+// Optional
+@import "vendors/bootstrap-4/grid";
+@import "vendors/bootstrap-4/utilities/display";
+@import "vendors/bootstrap-4/utilities/flex";
+@import "vendors/bootstrap-4/images";
+
+@import url(vendors/normalize.css);
+@import url(vendors/fontello-codes.css);
+
+@import 'vendors-extensions/fontello';
+
+@import 'base/typography';
+
+@import 'layout/header';
+@import 'layout/start-screen';
+@import 'layout/hero';
+
+@import 'components/site_logo';
+@import 'components/buttons';
+@import 'components/forms';

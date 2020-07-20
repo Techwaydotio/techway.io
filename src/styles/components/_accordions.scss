@@ -1,0 +1,145 @@
+/* --------------------------------
+   accordion
+-------------------------------- */
+
+.accordion
+{
+	&-container
+	{
+		margin-top: 50px;
+		margin-bottom: 50px;
+
+		&:first-child { margin-top: 0; }
+		&:last-child  { margin-bottom: 0; }
+	}
+
+	&-item
+	{
+		border-top: 1px solid #e3e3e3;
+
+		&:first-child
+		{
+			.accordion-content { display: block; }
+		}
+
+		&.active
+		{
+			.accordion-toggler
+			{
+				cursor: default;
+
+				i
+				{
+					color: #e0e0e0;
+
+					&:before,
+					&:after
+					{
+						transform: rotate(-135deg);
+					}
+				}
+			}
+		}
+	}
+
+	&-toggler
+	{
+		position: relative;
+		padding: 15px;
+		padding-left: 0;
+		padding-right: 40px;
+		cursor: pointer;
+
+		i
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 34px;
+			height: 34px;
+			color: $primary-color;
+			border: 2px solid currentColor;
+			@include transition(
+				background-color 0.3s ease-in-out,
+				border-color     0.3s ease-in-out,
+				color            0.3s ease-in-out
+			);
+
+			&:before,
+			&:after
+			{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				border: 1px solid currentColor;
+				transform-origin: center;
+				@include transition( transform 0.4s ease-in-out );
+			}
+
+			&:before
+			{
+				width: 2px;
+				height: 12px;
+				margin-left: -1px;
+				margin-top: -6px;
+			}
+
+			&:after
+			{
+				width: 12px;
+				height: 2px;
+				margin-left: -6px;
+				margin-top: -1px;
+			}
+		}
+
+		&:hover
+		{
+			i { color: #e0e0e0; }
+		}
+	}
+
+	&-title { margin: 0; }
+
+	&-content
+	{
+		display: none;
+
+		&__inner { padding-bottom: 15px; }
+
+		p
+		{
+			margin-top: 15px;
+			margin-bottom: 15px
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	.accordion-toggler
+	{
+		padding: 30px 0;
+		padding-right: 45px;
+	}
+
+	.accordion-content__inner { padding-bottom: 30px; }
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

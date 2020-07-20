@@ -1,0 +1,77 @@
+/* --------------------------------
+   check list
+-------------------------------- */
+
+.check-list
+{
+	line-height: 1.2;
+	text-align: left;
+
+	li
+	{
+		margin-top: 20px;
+		padding-left: 35px;
+
+		&:first-child { margin-top: 0; }
+	}
+
+	.ico
+	{
+		&-checked,
+		&-unchecked
+		{
+			float: left;
+			margin-left: -35px;
+			vertical-align: top;
+		}
+	}
+}
+
+.ico
+{
+	&-checked,
+	&-unchecked
+	{
+		display: inline-block;
+		vertical-align: middle;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 1rem;
+		color: $white;
+		text-align: center;
+		border-radius: 50%;
+
+		&:before { vertical-align: middle; }
+	}
+
+	&-checked
+	{
+		background-color: #30e3ca
+	}
+
+	&-unchecked
+	{
+		background-color: #e3306f
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

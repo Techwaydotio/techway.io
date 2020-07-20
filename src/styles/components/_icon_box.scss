@@ -1,0 +1,52 @@
+/* --------------------------------
+   icon box
+-------------------------------- */
+
+.icon-box
+{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 80px;
+	height: 80px;
+	background-color: $white;
+	border: 5px solid transparent;
+	margin: auto;
+	text-align: center;
+	@include userSelect(none);
+
+	&--circled { border-radius: 50%; }
+
+	>img,
+	>svg
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

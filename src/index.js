@@ -1,6 +1,10 @@
 // JS Goes here - ES6 supported
 
-import "./css/main.css";
+import './css/main.css';
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/index.js");
+import 'popper.js';
+import 'bootstrap';
+
+import './styles/style.scss';
+import './main';
+

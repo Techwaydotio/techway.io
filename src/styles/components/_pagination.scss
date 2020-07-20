@@ -1,0 +1,88 @@
+/* --------------------------------
+   pagination
+-------------------------------- */
+
+.pagination
+{
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -5px;
+	border-radius: 0;
+
+	.page-item
+	{
+		margin: 5px;
+		@include userSelect(none);
+
+		&.active
+		{
+			.page-link
+			{
+				background-color: $primary-color;
+				border-color: $primary-color;
+				cursor: default;
+			}
+		}
+
+		> span
+		{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1;
+		}
+	}
+
+	.page-link
+	{
+		width: 44px;
+		height: 44px;
+		margin-left: 0;
+		padding: 0;
+		line-height: 42px;
+		font-size: 1.2rem;
+		color: #888;
+		text-align: center;
+		text-decoration: none;
+		border-color: #eee;
+		border-radius: 50% !important;
+		box-shadow: none;
+		@include transition(
+			background-color 0.3s ease-in-out,
+			border-color     0.3s ease-in-out,
+			color            0.3s ease-in-out
+		);
+
+		i
+		{
+			line-height: 1;
+			font-size: 1.6rem;
+
+			&:before { vertical-align: middle; }
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	.pagination
+	{
+		margin: -5px -10px;
+
+		.page-item { margin: 5px 10px; }
+	}
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

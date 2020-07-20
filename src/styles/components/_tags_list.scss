@@ -1,0 +1,68 @@
+/* --------------------------------
+   tags list
+-------------------------------- */
+
+$itemGutter: 5px;
+$marginTop: $itemGutter;
+$marginLeft: $itemGutter;
+
+.tags-list
+{
+	line-height: 0;
+	font-size: 0;
+	letter-spacing: -1px;
+
+	ul
+	{
+		margin-top: -$marginTop;
+		margin-left: -$marginLeft;
+	}
+
+	li
+	{
+		display: inline-block;
+		vertical-align: top;
+		margin-top: $marginTop;
+		margin-left: $marginLeft;
+	}
+
+	a
+	{
+		display: block;
+		padding: $itemGutter $itemGutter*2;
+		line-height: 1.3;
+		font-size: 0.8rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		text-decoration: none;
+		letter-spacing: 1px;
+		cursor: pointer;
+		white-space: nowrap;
+		outline: none;
+		-webkit-user-drag: none;
+		user-drag: none;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+		border-radius: 10px;
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}
